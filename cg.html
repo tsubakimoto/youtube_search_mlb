@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="ja" ng-app>
+    <head>
+        <meta charset="UTF-8">
+        <title>Today's Recap</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="myscript.js"></script>
+    </head>
+    <body>
+        <h1>Today's Recap</h1>
+        <div ng-controller="mainCtrl">
+            <ul style="list-style:none;padding:0">
+                <li ng-show="results.length" ng-repeat="result in results">
+                    <a href="{{result.link[0]['href']}}" target="_blank">
+                        <img ng-src="{{result.media$group.media$thumbnail[0].url}}">
+                    </a>
+                    <a href="{{result.link[0]['href']}}" target="_blank">
+                        {{result.title.$t}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
