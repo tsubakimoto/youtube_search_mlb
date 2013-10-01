@@ -10,7 +10,7 @@ var dailyRecapCtrl = function($scope, $http) {
             'author=MLBGlobal13',
             'alt=json',
             'max-results=15',
-            'orderby=published',
+            'orderby=relevance',
             'v=2',
             'callback=JSON_CALLBACK'
         ].join('&');
@@ -23,7 +23,7 @@ var dailyRecapCtrl = function($scope, $http) {
 // recapCtrl
 var recapCtrl = function($scope, $http) {
     $scope.doSearch = function() {
-        var q = encodeURIComponent($scope.date).replace('-', '/');
+        var q = encodeURIComponent($scope.date).replace('-', '/').replace('-', '/');
         
         if ($scope.query != null) {
             q = q + '+' + encodeURIComponent($scope.query);
@@ -35,7 +35,7 @@ var recapCtrl = function($scope, $http) {
                 'author=MLBGlobal13',
                 'alt=json',
                 'max-results=15',
-                'orderby=published',
+                'orderby=relevance',
                 'v=2',
                 'callback=JSON_CALLBACK'
             ].join('&');
