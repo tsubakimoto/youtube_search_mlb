@@ -2,13 +2,14 @@
 <html lang="ja" ng-app>
     <head>
         <meta charset="UTF-8">
-        <title>Today's Recap</title>
+        <title>Daily Recap</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
         <script src="myscript.js"></script>
     </head>
     <body>
-        <h1>Today's Recap</h1>
-        <div ng-controller="mainCtrl">
+        <h1>Daily Recap</h1>
+        <p><a href="/">メニューに戻る</a></p>
+        <div ng-controller="dailyRecapCtrl">
             <ul style="list-style:none;padding:0">
                 <li ng-show="results.length" ng-repeat="result in results">
                     <a href="{{result.link[0]['href']}}" target="_blank">
